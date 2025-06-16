@@ -21,11 +21,13 @@ object_storage_client = oci.object_storage.ObjectStorageClient(config)
 
 list_objects_response = object_storage_client.list_objects(
     namespace_name="grwpg6hbkpoi",
-    bucket_name="oci_oci_spo_ar_jcorp_db_arch")
+    bucket_name="oci_oci_spo_ar_jcorp_db_arch",
+    fields="size")
 
 
 for object in list_objects_response.data.objects:
     print(object.name)
+    print(object.size)
     
 
 #print(list_objects_response.data)
