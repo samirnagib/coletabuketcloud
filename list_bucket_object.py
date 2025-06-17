@@ -25,11 +25,15 @@ list_objects_response = object_storage_client.list_objects(
     fields="size")
 
 
-for object in list_objects_response.data.objects:
-    print(object.name)
-    print(object.size)
+#for object in list_objects_response.data.objects:
+#    print(object.name)
+#    print(object.size)
     
+total_size = sum(obj.size for obj in list_objects_response.data.objects)
 
+print(f"Total size of objects in bucket: {total_size} bytes")
+print(f"Tamanho total: {total_size / (1024**2):.2f} MB\n")
+# Uncomment the following lines to print all bucket names
 #print(list_objects_response.data)
 
 #for bucket in list_buckets_response.data:
