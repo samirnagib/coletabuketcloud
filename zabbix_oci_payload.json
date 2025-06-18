@@ -39,7 +39,7 @@
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ar_tools_db_diario]", "value": 4204071775}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ar_tools_db_mensal]", "value": 4666834696}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ht_legado_db_arch]", "value": 17928228760}
-{"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ht_legado_db_diario]", "value": 44338075}
+{"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ht_legado_db_diario]", "value": 77023287}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_bi_db_arch]", "value": 29840379916}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_bi_db_diario]", "value": 24399322190}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_brm_db_arch]", "value": 31681677581}
@@ -51,8 +51,8 @@
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_financ_db_arch]", "value": 31648123216}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_financ_db_diario]", "value": 27376228754}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_geral_db_arch]", "value": 12744414927}
-{"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_geral_db_diario]", "value": 24446510353}
-{"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_geral_fs]", "value": 28629275466}
+{"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_geral_db_diario]", "value": 22758304401}
+{"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_geral_fs]", "value": 29126300106}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_ibms_db_arch]", "value": 30692871310}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_ibms_db_diario]", "value": 23313000464}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_jcorp_db_arch]", "value": 10464789583}
@@ -65,7 +65,7 @@
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_siscom_db_diario]", "value": 22206754194}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_sisrest_db_arch]", "value": 26379034065}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_sisrest_db_diario]", "value": 32082233107}
-{"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_sql_base_diario]", "value": 1975549329}
+{"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_sql_base_diario]", "value": 2091941265}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_tools_db_arch]", "value": 16968074063}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[oci_oci_spo_ia_tools_db_diario]", "value": 19393427217}
 {"host": "meu_host_zabbix", "key": "oci.bucket.size[onp_oci_spo_cl_drcommvault]", "value": 2193820}
