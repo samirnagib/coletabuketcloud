@@ -1,0 +1,177 @@
+import mysql.connector
+
+# Conectar ao banco de dados
+conexao = mysql.connector.connect(
+    host='localhost',       # ou IP do servidor MySQL
+    user='seu_usuario',
+    password='sua_senha',
+    database='nome_do_banco'
+)
+
+cursor = conexao.cursor()
+
+# Criar a tabela
+comando_criacao = """
+CREATE TABLE IF NOT EXISTS nova_tabela (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    momento TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    descricao VARCHAR(255),
+    valor_inteiro INT
+)
+"""
+cursor.execute(comando_criacao)
+
+# Inserir um registro
+comando_insercao = """
+INSERT INTO nova_tabela (descricao, valor_inteiro)
+VALUES (%s, %s)
+"""
+dados = ("Exemplo de texto", 42)
+cursor.execute(comando_insercao, dados)
+
+# Confirmar a inserção no banco
+conexao.commit()
+
+# Encerrar conexões
+cursor.close()
+conexao.close()
+
+import mysql.connector
+
+# Conectar ao banco de dados
+conexao = mysql.connector.connect(
+    host='localhost',
+    user='seu_usuario',
+    password='sua_senha',
+    database='nome_do_banco'
+)
+
+cursor = conexao.cursor()
+
+# Inserções múltiplas
+comando = """
+INSERT INTO nova_tabela (descricao, valor_inteiro)
+VALUES (%s, %s)
+"""
+
+dados = [
+    ("Temperatura ambiente", 23),
+    ("Leitura sensor A", 45),
+    ("Evento crítico", 99),
+    ("Modo standby", 12)
+]
+
+cursor.executemany(comando, dados)
+conexao.commit()
+
+print(f"{cursor.rowcount} registros inseridos com sucesso.")
+
+cursor.close()
+conexao.close()
+
+
+import sys
+
+# sys.argv é uma lista onde o primeiro elemento é o nome do script
+# e os demais são os argumentos passados
+print("Nome do script:", sys.argv[0])
+print("Argumentos:", sys.argv[1:])
+
+
+Em Python, você pode escrever scripts que aceitam parâmetros ao serem chamados no sistema operacional usando o módulo `sys` ou `argparse`. Aqui estão alguns exemplos:
+
+---
+
+### 1. Usando `sys.argv` (Simples e direto)
+O módulo `sys` permite acessar os argumentos passados ao script.
+
+```python
+import sys
+
+# Os argumentos começam a partir do índice 1 (índice 0 é o nome do script)
+if len(sys.argv) > 1:
+    print("Parâmetros recebidos:", sys.argv[1:])
+else:
+    print("Nenhum parâmetro foi passado.")
+```
+
+**Como executar no terminal:**
+```sh
+python meu_script.py argumento1 argumento2 argumento3
+```
+
+**Saída esperada:**
+```
+Parâmetros recebidos: ['argumento1', 'argumento2', 'argumento3']
+```
+
+---
+
+### 2. Usando `argparse` (Mais robusto e organizado)
+O módulo `argparse` permite definir parâmetros opcionais e obrigatórios.
+
+```python
+import argparse
+
+# Criando um parser
+parser = argparse.ArgumentParser(description="Script que recebe parâmetros.")
+
+# Adicionando argumentos
+parser.add_argument("nome", type=str, help="Seu nome")
+parser.add_argument("idade", type=int, help="Sua idade")
+parser.add_argument("--cidade", type=str, default="Desconhecida", help="Cidade onde mora (opcional)")
+
+# Parseando os argumentos
+args = parser.parse_args()
+
+# Exibindo os valores
+print(f"Nome: {args.nome}")
+print(f"Idade: {args.idade}")
+print(f"Cidade: {args.cidade}")
+```
+
+**Como executar no terminal:**
+```sh
+python meu_script.py Samir 30 --cidade "Rio de Janeiro"
+```
+
+**Saída esperada:**
+```
+Nome: Samir
+Idade: 30
+Cidade: Rio de Janeiro
+```
+
+---
+
+### 3. Usando `argparse` para múltiplos valores
+Se quiser passar múltiplos valores para um único argumento, use `nargs='+'`.
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(description="Recebe múltiplos valores.")
+parser.add_argument("numeros", type=int, nargs="+", help="Lista de números")
+
+args = parser.parse_args()
+
+print(f"Números recebidos: {args.numeros}")
+print(f"Soma dos números: {sum(args.numeros)}")
+```
+
+**Como executar no terminal:**
+```sh
+python meu_script.py 10 20 30 40
+```
+
+**Saída esperada:**
+```
+Números recebidos: [10, 20, 30, 40]
+Soma dos números: 100
+```
+
+---
+
+Esses métodos permitem que você passe parâmetros ao chamar o script no sistema operacional. O `argparse` é mais recomendado para scripts mais complexos, pois oferece validação e ajuda automática.
+
+Qual desses métodos você acha mais útil para o seu caso? 😊

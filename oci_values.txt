@@ -1,0 +1,21 @@
+    namespace_name="grwpg6hbkpoi",
+prod    compartment_id="ocid1.compartment.oc1..aaaaaaaa2tfrl5y3pqx2ckjb6utznfcffijn4ufdi6a7nykq6vuz7pip6cma",
+dev    compartment_id="ocid1.compartment.oc1..aaaaaaaacy5bl325ueiepvkw4dsu7hh4b54f2uk2xgunfcekt23u4shcq66a",
+
+
+import oci
+
+# Carregar configuração do arquivo padrão (~/.oci/config)
+config = oci.config.from_file()
+
+# Criar cliente de identidade
+identity_client = oci.identity.IdentityClient(config)
+
+# OCID do compartment que você quer buscar
+compartment_ocid = "ocid1.compartment.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# Obter detalhes do compartment
+compartment = identity_client.get_compartment(compartment_ocid).data
+
+# Exibir o nome do compartment
+print(f"Nome do Compartment: {compartment.name}")
