@@ -19,3 +19,97 @@ compartment = identity_client.get_compartment(compartment_ocid).data
 
 # Exibir o nome do compartment
 print(f"Nome do Compartment: {compartment.name}")
+
+====================
+
+import oci
+
+# Carrega a configuração padrão (~/.oci/config)
+config = oci.config.from_file()
+
+# Cria o cliente de Object Storage
+object_storage = oci.object_storage.ObjectStorageClient(config)
+
+# Define os parâmetros
+namespace = object_storage.get_namespace().data
+bucket_name = "NOME_DO_BUCKET"  # Substitua pelo nome do seu bucket
+compartment_id = "OCID_DO_COMPARTIMENTO"  # Substitua pelo OCID do compartimento
+
+# Obtém os detalhes do bucket
+bucket = object_storage.get_bucket(namespace, bucket_name).data
+
+# Exibe o tamanho armazenado e número de objetos
+print(f"Tamanho armazenado: {bucket.approximate_size / (1024**2):.2f} MB")
+print(f"Número de objetos: {bucket.approximate_count}")
+
+============================
+import requests
+import oci
+import json
+from oci.signer import Signer
+
+# Carrega as configurações do arquivo ~/.oci/config
+config = oci.config.from_file()
+
+# Cria o signer para autenticação
+signer = Signer(
+    tenancy=config["tenancy"],
+    user=config["user"],
+    fingerprint=config["fingerprint"],
+    private_key_file_location=config["key_file"],
+    pass_phrase=config.get("pass_phrase")
+)
+
+# Parâmetros
+region = config["region"]
+namespace = "SEU_NAMESPACE"  # Você pode obter isso com a API get_namespace
+bucket_name = "SEU_BUCKET"
+
+# Monta a URL da requisição
+url = f"https://objectstorage.{region}.oraclecloud.com/n/{namespace}/b/{bucket_name}"
+
+# Faz a requisição GET
+response = requests.get(url, auth=signer)
+
+# Verifica e exibe os dados
+if response.status_code == 200:
+    data = response.json()
+    size_bytes = data.get("approximateSize", 0)
+    count = data.get("approximateCount", 0)
+    print(f"Tamanho armazenado: {size_bytes / (1024**2):.2f} MB")
+    print(f"Número de objetos: {count}")
+else:
+    print(f"Erro ao obter dados: {response.status_code} - {response.text}")
+
+=====================
+import oci
+from datetime import datetime, timedelta
+
+# Configuração do cliente
+config = oci.config.from_file()  # Assumindo que você tenha o config no ~/.oci/config
+metrics_client = oci.monitoring.MonitoringClient(config)
+
+# Parâmetros
+namespace = "oci_objectstorage"
+bucket_name = "nome-do-seu-bucket"
+compartment_id = "ocid1.compartment.oc1..xxxxx"
+namespace_name = "seu-namespace-no-Object-Storage"  # Pode ser visto na página do bucket
+
+# Consulta de métrica
+end_time = datetime.utcnow()
+start_time = end_time - timedelta(hours=1)
+
+response = metrics_client.summarize_metrics_data(
+    compartment_id=compartment_id,
+    summarize_metrics_data_details=oci.monitoring.models.SummarizeMetricsDataDetails(
+        namespace=namespace,
+        query=f"storage.usedBytes[1h].sum{{namespace=\"{namespace_name}\", bucketName=\"{bucket_name}\"}}",
+        start_time=start_time,
+        end_time=end_time
+    )
+)
+
+for item in response.data:
+    for data_point in item.aggregated_datapoints:
+        size_in_bytes = data_point.value
+        print(f"Tamanho do bucket {bucket_name}: {size_in_bytes / (1024 ** 3):.2f} GB")

@@ -1,0 +1,40 @@
+Claro, Samir! Para chamar a REST API do OCI Object Storage via Postman, você precisa configurar a autenticação com assinatura RSA, já que o OCI exige isso para chamadas seguras. Aqui vai um passo a passo:
+
+🧰 1. Pré-requisitos
+- Tenha sua chave privada (gerada no setup do OCI).
+- Tenha os seguintes dados:
+- Tenancy OCID
+- User OCID
+- Fingerprint da chave
+- Namespace
+- Região (ex: sa-saopaulo-1)
+- Nome do bucket
+
+🛠️ 2. Configure o ambiente no Postman
+- Vá em Environments e crie um novo.
+- Adicione as variáveis:
+- tenancyId
+- userId
+- fingerprint
+- privateKey (cole o conteúdo da chave privada PEM)
+- region
+- namespaceName
+- bucketName
+
+📦 3. Importe uma coleção pronta
+A Oracle disponibiliza uma coleção pública no Postman com os endpoints do Object Storage. Você pode usá-la como base e adaptar para seu uso.
+
+🔐 4. Assinatura da Requisição
+Como o Postman não assina nativamente com RSA-SHA256, você precisa usar um pre-request script com a biblioteca jsrsasign. Um exemplo completo com scripts e ambiente está disponível neste repositório do GitHub.
+
+🧪 5. Exemplo de chamada GET para detalhes do bucket
+Endpoint:
+GET https://objectstorage.{region}.oraclecloud.com/n/{namespaceName}/b/{bucketName}
+
+
+Headers obrigatórios:
+- Date
+- Host
+- Authorization (gerado via script com assinatura RSA)
+
+Se quiser, posso te ajudar a importar esse ambiente e configurar os scripts no Postman passo a passo. Quer seguir por aí?
