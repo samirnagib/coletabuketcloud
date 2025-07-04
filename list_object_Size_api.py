@@ -1,31 +1,40 @@
+# This is an automatically generated code sample.
+# To make this code sample work in your Oracle Cloud tenancy,
+# please replace the values for any parameters whose current values do not fit
+# your use case (such as resource IDs, strings containing ‘EXAMPLE’ or ‘unique_id’, and
+# boolean, number, and enum parameters with values not fitting your use case).
+
 import oci
-from datetime import datetime, timedelta
+from datetime import datetime
 
-# Configuração do cliente
-config = oci.config.from_file()  # Assumindo que você tenha o config no ~/.oci/config
-metrics_client = oci.monitoring.MonitoringClient(config)
+# Create a default config using DEFAULT profile in default location
+# Refer to
+# https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File
+# for more info
+config = oci.config.from_file()
 
-# Parâmetros
-namespace = "grwpg6hbkpoi"
-bucket_name = "noci_oci_spo_ia_jcorp_db_diario"
-compartment_id = "ocid1.compartment.oc1..aaaaaaaa2tfrl5y3pqx2ckjb6utznfcffijn4ufdi6a7nykq6vuz7pip6cma"
-namespace_name = "grwpg6hbkpoi"  # Pode ser visto na página do bucket
 
-# Consulta de métricacl
-end_time = datetime.now()
-start_time = end_time - timedelta(hours=1)
+# Initialize service client with default config file
+monitoring_client = oci.monitoring.MonitoringClient(config)
 
-response = metrics_client.summarize_metrics_data(
-    compartment_id=compartment_id,
+
+# Send the request to service, some parameters are not required, see API
+# doc for more info
+summarize_metrics_data_response = monitoring_client.summarize_metrics_data(
+    compartment_id="ocid1.compartment.oc1..aaaaaaaa2tfrl5y3pqx2ckjb6utznfcffijn4ufdi6a7nykq6vuz7pip6cma",
     summarize_metrics_data_details=oci.monitoring.models.SummarizeMetricsDataDetails(
-        namespace=namespace,
-        query=f"storage.usedBytes[1h].sum{{namespace=\"{namespace_name}\", bucketName=\"{bucket_name}\"}}",
-        start_time=start_time,
-        end_time=end_time
-    )
-)
+        namespace="oci_objectstorage",
+        query='StoredBytes[5m]{resourceID = "ocid1.bucket.oc1.sa-saopaulo-1.aaaaaaaaok6kbknypm5brzllao6znmllcnjwe4mz4bhx55clup2anb37nieq"}.sum()',
+        
+        start_time=datetime.strptime(
+            "2025-07-03T00:00:00.000Z",
+            "%Y-%m-%dT%H:%M:%S.%fZ"),
+        end_time=datetime.strptime(
+            "2025-07-03T23:59:59.000Z",
+            "%Y-%m-%dT%H:%M:%S.%fZ"),
+        ),
+    
+    compartment_id_in_subtree=False)
 
-for item in response.data:
-    for data_point in item.aggregated_datapoints:
-        size_in_bytes = data_point.value
-        print(f"Tamanho do bucket {bucket_name}: {size_in_bytes / (1024 ** 3):.2f} GB")
+# Get the data from response
+print(summarize_metrics_data_response.data)
