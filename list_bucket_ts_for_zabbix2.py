@@ -21,15 +21,18 @@ for bucket in list_buckets_response.data:
     list_objects_response = object_storage_client.list_objects(
         namespace_name=namespace_name,
         bucket_name=bucket.name,
-        fields="size"
+        fields="size, id"
     )
     total_size = sum(obj.size for obj in list_objects_response.data.objects)
+    
+    print(f"Bucket: {bucket.name}, Bucket ID: {bucket.id}, Total Size: {total_size} bytes")
 
     dados_zabbix.append({
         "bucket_name": f"{bucket.name}",
         "bucket_size": total_size
     })
-
+"""
+"
 # Salvar em arquivo JSON para envio posterior
 with open("zabbix_oci_payload3.json", "w") as f:
     #for item in dados_zabbix:
@@ -37,3 +40,5 @@ with open("zabbix_oci_payload3.json", "w") as f:
 
 
 print(f"Arquivo gerado com {len(dados_zabbix)} entradas.")
+
+"""

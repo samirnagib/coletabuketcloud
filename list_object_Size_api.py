@@ -5,6 +5,7 @@
 # boolean, number, and enum parameters with values not fitting your use case).
 
 import oci
+import time
 from datetime import datetime
 
 # Create a default config using DEFAULT profile in default location
@@ -27,14 +28,15 @@ summarize_metrics_data_response = monitoring_client.summarize_metrics_data(
         query='StoredBytes[5m]{resourceID = "ocid1.bucket.oc1.sa-saopaulo-1.aaaaaaaaok6kbknypm5brzllao6znmllcnjwe4mz4bhx55clup2anb37nieq"}.sum()',
         
         start_time=datetime.strptime(
-            "2025-07-03T00:00:00.000Z",
+            "2025-07-07T09:00:00.000Z",
             "%Y-%m-%dT%H:%M:%S.%fZ"),
         end_time=datetime.strptime(
-            "2025-07-03T23:59:59.000Z",
+            "2025-07-07T10:00:00.000Z",
             "%Y-%m-%dT%H:%M:%S.%fZ"),
         ),
     
     compartment_id_in_subtree=False)
 
 # Get the data from response
-print(summarize_metrics_data_response.data)
+#print(summarize_metrics_data_response.data)
+print(summarize_metrics_data_response.data[0].aggregated_datapoints)
