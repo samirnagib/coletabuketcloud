@@ -31,8 +31,8 @@ for bucket in list_buckets_response.data:
         "bucket_name": f"{bucket.name}",
         "bucket_size": total_size
     })
-"""
-"
+
+
 # Salvar em arquivo JSON para envio posterior
 with open("zabbix_oci_payload3.json", "w") as f:
     #for item in dados_zabbix:
@@ -41,4 +41,3 @@ with open("zabbix_oci_payload3.json", "w") as f:
 
 print(f"Arquivo gerado com {len(dados_zabbix)} entradas.")
 
-"""
