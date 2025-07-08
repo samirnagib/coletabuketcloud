@@ -1,3 +1,16 @@
+# ##############################################################################################################################
+# Coleta de Tamanho de Buckets do OCI Object Storage para Banco de Dados MySQL
+# Versão 1.0
+# Autor: Samir Lins Nagib (samir@g.globo)
+# Data: 07/07/2025  
+# Descrição: Este script coleta o tamanho dos buckets do OCI Object Storage e insere uns dados para ingetão em um banco de 
+# dados MySQL.
+# Requisitos: Biblioteca OCI Python SDK, Biblioteca MySQL Connector/Python
+# Configuração do banco de dados MySQL: Deve existir um banco de dados chamado 'buckets_monitor_geral' e uma tabela 
+# chamada 'monitor_oci' com as colunas especificadas.
+# Uso: Execute o script passando o OCID do compartment e o namespace do bucket como argumentos de linha de comando.
+# Exemplo: python bucket_size_for_bd.py <compartment_ocid> <namespace>
+# ##############################################################################################################################
 #importações
 import datetime
 import time

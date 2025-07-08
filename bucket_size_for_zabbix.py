@@ -1,3 +1,13 @@
+# ##############################################################################################################################
+# Coleta de Tamanho de Buckets do OCI Object Storage para Zabbix
+# Versão 1.0
+# Autor: Samir Lins Nagib (samir@g.globo)
+# Data: 08/07/2025  
+# Descrição: Este script coleta o tamanho dos buckets do OCI Object Storage e gera um arquivo JSON para envio ao Zabbix.
+# Requisitos: Biblioteca OCI Python SDK, Zabbix configurado para receber dados via JSON
+# Uso: Execute o script passando o OCID do compartment e o namespace do bucket como argumentos de linha de comando.
+# Exemplo: python bucket_size_for_zabbix.py <compartment_ocid> <namespace>
+# ##############################################################################################################################
 #importações
 import datetime
 import time

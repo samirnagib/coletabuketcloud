@@ -1,3 +1,13 @@
+# ##############################################################################################################################
+# Coleta de Tamanho de Buckets do OCI Object Storage para exibição em tela
+# Versão 1.0
+# Autor: Samir Lins Nagib (samir@g.globo)
+# Data: 04/07/2025  
+# Descrição: Este script coleta o tamanho dos buckets do OCI Object Storage e gera uma saída em tela.
+# Requisitos: Biblioteca OCI Python SDK
+# Uso: Execute o script passando o OCID do compartment e o namespace do bucket como argumentos de linha de comando.
+# Exemplo: python bucket_size_for_screen.py <compartment_ocid> <namespace>
+# ##############################################################################################################################
 #importações
 import datetime
 import time
@@ -5,7 +15,6 @@ import oci
 import json
 from datetime import timedelta
 import argparse
-
 
 parser = argparse.ArgumentParser(description="Informe o nome do compartment e o namespace.")
 parser.add_argument("compartment", type=str, help="Digite o compartment OCID")
