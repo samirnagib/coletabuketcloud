@@ -34,7 +34,7 @@ for bucket in list_buckets_response.data:
 
 
 # Salvar em arquivo JSON para envio posterior
-with open("zabbix_oci_payload3.json", "w") as f:
+with open("zabbix_oci_payload4.json", "w") as f:
     #for item in dados_zabbix:
     json.dump({"data": dados_zabbix}, f, indent=2)
 
