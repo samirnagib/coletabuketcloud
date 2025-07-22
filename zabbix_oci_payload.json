@@ -1,60 +1,288 @@
 {
-"data": [
-{"bucket_name": "archive-backup", "bucket_size": 656.0},
-{"bucket_name": "oci_oci_spo_ar_bidev_db_arch", "bucket_size": 674.0},
-{"bucket_name": "oci_oci_spo_ar_bidev_db_diario", "bucket_size": 678.0},
-{"bucket_name": "oci_oci_spo_ar_brmdev_db_arch", "bucket_size": 676.0},
-{"bucket_name": "oci_oci_spo_ar_brmdev_db_diario", "bucket_size": 680.0},
-{"bucket_name": "oci_oci_spo_ar_engenhariadev_db_arch", "bucket_size": 690.0},
-{"bucket_name": "oci_oci_spo_ar_engenhariadev_db_diario", "bucket_size": 694.0},
-{"bucket_name": "oci_oci_spo_ar_financeirodev_db_arch", "bucket_size": 690.0},
-{"bucket_name": "oci_oci_spo_ar_financeirodev_db_diario", "bucket_size": 694.0},
-{"bucket_name": "oci_oci_spo_ar_geral_dev_db_arch", "bucket_size": 682.0},
-{"bucket_name": "oci_oci_spo_ar_geral_dev_db_diario", "bucket_size": 686.0},
-{"bucket_name": "oci_oci_spo_ar_homologg_db_arch", "bucket_size": 680.0},
-{"bucket_name": "oci_oci_spo_ar_homologg_db_diario", "bucket_size": 684.0},
-{"bucket_name": "oci_oci_spo_ar_ibmsdev_db_arch", "bucket_size": 678.0},
-{"bucket_name": "oci_oci_spo_ar_ibmsdev_db_diario", "bucket_size": 682.0},
-{"bucket_name": "oci_oci_spo_ar_jcorpdev_db_arch", "bucket_size": 680.0},
-{"bucket_name": "oci_oci_spo_ar_jcorpdev_db_diario", "bucket_size": 684.0},
-{"bucket_name": "oci_oci_spo_ar_mamdev_db_arch", "bucket_size": 676.0},
-{"bucket_name": "oci_oci_spo_ar_mamdev_db_diario", "bucket_size": 680.0},
-{"bucket_name": "oci_oci_spo_ar_processadordev_db_arch", "bucket_size": 692.0},
-{"bucket_name": "oci_oci_spo_ar_processadordev_db_diario", "bucket_size": 696.0},
-{"bucket_name": "oci_oci_spo_ar_simulado_db_arch", "bucket_size": 52575601320.0},
-{"bucket_name": "oci_oci_spo_ar_simulado_db_diario", "bucket_size": 2034322634549.0},
-{"bucket_name": "oci_oci_spo_ar_siscomdev_db_arch", "bucket_size": 378491896490.0},
-{"bucket_name": "oci_oci_spo_ar_siscomdev_db_diario", "bucket_size": 58164006659804.0},
-{"bucket_name": "oci_oci_spo_ar_toolsdev_db_arch", "bucket_size": 680.0},
-{"bucket_name": "oci_oci_spo_ar_toolsdev_db_diario", "bucket_size": 684.0},
-{"bucket_name": "oci_oci_spo_ia_bidev_db_arch", "bucket_size": 20147367138.0},
-{"bucket_name": "oci_oci_spo_ia_bidev_db_diario", "bucket_size": 26066984628710.0},
-{"bucket_name": "oci_oci_spo_ia_brmdev_db_arch", "bucket_size": 676.0},
-{"bucket_name": "oci_oci_spo_ia_brmdev_db_diario", "bucket_size": 680.0},
-{"bucket_name": "oci_oci_spo_ia_dev_sql_base_diario", "bucket_size": 686.0},
-{"bucket_name": "oci_oci_spo_ia_engenhariadev_db_arch", "bucket_size": 49822069554.0},
-{"bucket_name": "oci_oci_spo_ia_engenhariadev_db_diario", "bucket_size": 772924270966.0},
-{"bucket_name": "oci_oci_spo_ia_financeirodev_db_arch", "bucket_size": 187586139378.0},
-{"bucket_name": "oci_oci_spo_ia_financeirodev_db_diario", "bucket_size": 1114520985782.0},
-{"bucket_name": "oci_oci_spo_ia_geral_dev_db_arch", "bucket_size": 15981385002.0},
-{"bucket_name": "oci_oci_spo_ia_geral_dev_db_diario", "bucket_size": 6573525934.0},
-{"bucket_name": "oci_oci_spo_ia_homologg_db_arch", "bucket_size": 509348978344.0},
-{"bucket_name": "oci_oci_spo_ia_homologg_db_diario", "bucket_size": 383262931820.0},
-{"bucket_name": "oci_oci_spo_ia_ibmsdev_db_arch", "bucket_size": 38303431932710.0},
-{"bucket_name": "oci_oci_spo_ia_ibmsdev_db_diario", "bucket_size": 36667851341162.0},
-{"bucket_name": "oci_oci_spo_ia_jcorpdev_db_arch", "bucket_size": 30757909160.0},
-{"bucket_name": "oci_oci_spo_ia_jcorpdev_db_diario", "bucket_size": 580879671916.0},
-{"bucket_name": "oci_oci_spo_ia_mamdev_db_arch", "bucket_size": 31373419044.0},
-{"bucket_name": "oci_oci_spo_ia_mamdev_db_diario", "bucket_size": 69618112104.0},
-{"bucket_name": "oci_oci_spo_ia_processadordev_db_arch", "bucket_size": 7995443252.0},
-{"bucket_name": "oci_oci_spo_ia_processadordev_db_diario", "bucket_size": 48966406072.0},
-{"bucket_name": "oci_oci_spo_ia_simulado_db_arch", "bucket_size": 0},
-{"bucket_name": "oci_oci_spo_ia_simulado_db_diario", "bucket_size": 0},
-{"bucket_name": "oci_oci_spo_ia_siscomdev_db_arch", "bucket_size": 154730101866.0},
-{"bucket_name": "oci_oci_spo_ia_siscomdev_db_diario", "bucket_size": 7736577467502.0},
-{"bucket_name": "oci_oci_spo_ia_toolsdev_db_arch", "bucket_size": 31112327400.0},
-{"bucket_name": "oci_oci_spo_ia_toolsdev_db_diario", "bucket_size": 443217364204.0},
-{"bucket_name": "onp_oci_spo_ht_fs_geral", "bucket_size": 664.0},
-{"bucket_name": "standart-backup", "bucket_size": 375284691.0},
-]
+  "data": [
+    {
+      "bucket_name": "backup-archive",
+      "bucket_size": 11880211880334.0
+    },
+    {
+      "bucket_name": "backup-standard",
+      "bucket_size": 322.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_bi_db_arch",
+      "bucket_size": 26789836550546.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_bi_db_diario",
+      "bucket_size": 668.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_bi_db_mensal",
+      "bucket_size": 77881901360005.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_brm_db_mensal",
+      "bucket_size": 109817589924382.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_ebs_db_arch",
+      "bucket_size": 13807744598700.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_ebs_db_diario",
+      "bucket_size": 72887932901922.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_ebs_db_mensal",
+      "bucket_size": 37691706198413.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_eng_db_arch",
+      "bucket_size": 1325752016267.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_eng_db_diario",
+      "bucket_size": 6496327988907.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_eng_db_mensal",
+      "bucket_size": 11747539621195.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_financ_db_arch",
+      "bucket_size": 2766560408393.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_financ_db_diario",
+      "bucket_size": 676.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_financ_db_mensal",
+      "bucket_size": 38847625939499.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_geral_db_arch",
+      "bucket_size": 306692584030.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_geral_db_diario",
+      "bucket_size": 674.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_geral_db_mensal",
+      "bucket_size": 14233114349788.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_ibms_db_arch",
+      "bucket_size": 80459925093723.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_ibms_db_diario",
+      "bucket_size": 672.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_ibms_db_mensal",
+      "bucket_size": 73473642980158.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_jcorp_db_arch",
+      "bucket_size": 214733981785366.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_jcorp_db_diario",
+      "bucket_size": 674.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_jcorp_db_mensal",
+      "bucket_size": 40292506476906.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_legado_db_arch",
+      "bucket_size": 972806473102.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_legado_db_diario",
+      "bucket_size": 676.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_legado_db_mensal",
+      "bucket_size": 3454696887725.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_mam_db_arch",
+      "bucket_size": 46294274887.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_mam_db_diario",
+      "bucket_size": 670.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_mam_db_mensal",
+      "bucket_size": 670.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_siscom_db_arch",
+      "bucket_size": 450831310913.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_siscom_db_diario",
+      "bucket_size": 2977280531074.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_siscom_db_mensal",
+      "bucket_size": 6622741442699.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_sisrest_db_arch",
+      "bucket_size": 37297656741888.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_sisrest_db_diario",
+      "bucket_size": 77817711340584.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_sisrest_db_mensal",
+      "bucket_size": 32627185678397.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_sql_base_mensal",
+      "bucket_size": 546.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_tools_db_arch",
+      "bucket_size": 350566628653.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_tools_db_diario",
+      "bucket_size": 10520446545801.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ar_tools_db_mensal",
+      "bucket_size": 20567110745353.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ht_legado_db_arch",
+      "bucket_size": 672.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ht_legado_db_diario",
+      "bucket_size": 105705533.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_bi_db_arch",
+      "bucket_size": 20777209526680.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_bi_db_diario",
+      "bucket_size": 39094315257308.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_brm_db_arch",
+      "bucket_size": 19737084827290.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_brm_db_diaro",
+      "bucket_size": 196714895057372.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_ebs_db_arch",
+      "bucket_size": 666.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_ebs_db_diario",
+      "bucket_size": 670.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_eng_db_arch",
+      "bucket_size": 1637250992500.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_eng_db_diario",
+      "bucket_size": 4962705236254.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_financ_db_arch",
+      "bucket_size": 18078583939424.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_financ_db_diario",
+      "bucket_size": 20084823117092.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_geral_db_arch",
+      "bucket_size": 429056992030.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_geral_db_diario",
+      "bucket_size": 1356836636706.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_geral_fs",
+      "bucket_size": 79112985825172.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_ibms_db_arch",
+      "bucket_size": 94444450551388.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_ibms_db_diario",
+      "bucket_size": 38652304805664.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_jcorp_db_arch",
+      "bucket_size": 215618865994014.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_jcorp_db_diario",
+      "bucket_size": 17827004442274.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_legado_db_arch",
+      "bucket_size": 4592409174752.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_legado_db_diario",
+      "bucket_size": 1787413281060.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_mam_db_arch",
+      "bucket_size": 666.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_mam_db_diario",
+      "bucket_size": 670.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_siscom_db_arch",
+      "bucket_size": 3766856811616.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_siscom_db_diario",
+      "bucket_size": 3421454753462.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_sisrest_db_arch",
+      "bucket_size": 17153642586914.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_sisrest_db_diario",
+      "bucket_size": 58722706485158.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_sql_base_diario",
+      "bucket_size": 4733346594.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_tools_db_arch",
+      "bucket_size": 1932832590174.0
+    },
+    {
+      "bucket_name": "oci_oci_spo_ia_tools_db_diario",
+      "bucket_size": 9261421121634.0
+    },
+    {
+      "bucket_name": "onp_oci_spo_cl_drcommvault",
+      "bucket_size": 2193820.0
+    }
+  ]
 }

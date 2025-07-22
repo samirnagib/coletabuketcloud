@@ -3,6 +3,12 @@
 # Versão 2.0
 # Autor: Samir Lins Nagib (samir@g.globo)
 # Data: 08/07/2025  
+# Alterações: 22/07/2025
+# - Adicionada lógica para lidar com limites de requisições (HTTP 429)
+# - Implementada lógica de retry com espera aleatória
+# - Melhorias na formatação do JSON de saída   
+# - Adicionado tratamento de erros para exceções de serviço
+#
 # Descrição: Este script coleta o tamanho dos buckets do OCI Object Storage e gera um arquivo JSON para envio ao Zabbix.
 # Requisitos: Biblioteca OCI Python SDK, Zabbix configurado para receber dados via JSON
 # Uso: Execute o script passando o OCID do compartment e o namespace do bucket como argumentos de linha de comando.
@@ -100,11 +106,12 @@ list_buckets_response = object_storage_client.list_buckets(
     limit=300
 )
 
+'''
 # Criando o arquivo de payload para o Zabbix
 with open("zabbix_oci_payload.json", "w") as f:
     f.write("{\n")
     f.write('"data": [\n')
-
+'''
 
 #criando uma lista para armazenar os nomes dos buckets
 balde = []
@@ -119,14 +126,20 @@ for dtBalde in balde:
         "bucket_name": dtBalde,
         "bucket_size": tamanho
     })
-        
-    
 
+# Salvar em arquivo JSON para envio posterior
+        
+payload = {"data": dados_zabbix}
+
+with open("zabbix_oci_payload.json", "w") as f:
+    json.dump(payload, f, indent=2)
+    f.write("\n")    
+'''
 # Salvar em arquivo JSON para envio posterior
 with open("zabbix_oci_payload.json", "a") as f:
     for item in dados_zabbix:
         f.write(json.dumps(item) + ",\n")
     f.write("]\n")
     f.write("}")
-    
+'''    
 print(f"Arquivo gerado com {len(dados_zabbix)} entradas.")
