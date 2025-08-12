@@ -63,14 +63,14 @@ def consultar_bucket(bucket_name):
     except oci.exceptions.ServiceError as e:
         if e.status == 429:
             wait_time = random.uniform(1.0, 3.0)
-            print(f"🔁 Limite de requisições atingido. Aguardando {wait_time:.2f}s antes de tentar novamente para o bucket '{bucket_name}'...")
+            print(f" [o] Limite de requisições atingido. Aguardando {wait_time:.2f}s antes de tentar novamente para o bucket '{bucket_name}'...")
             time.sleep(wait_time)
             return consultar_bucket(bucket_name)  # Tenta novamente
         else:
-            print(f"❌ Erro ao consultar bucket '{bucket_name}': {str(e)}")
+            print(f">> Erro ao consultar bucket '{bucket_name}': {str(e)}")
             return 0
 
-
+print("Iniciando a coleta de tamanho dos buckets do OCI Object Storage...")
 
 
 # Atribuindo os valores dos argumentos às variáveis
@@ -124,6 +124,35 @@ for dtBalde in balde:
         "bucket_size": tamanho
     })
 
+
+# Nova Abordagem: Formatação do JSON de saída
+
+# Criar os itens para envio ao Zabbix
+items = []
+ 
+# Adicionar o payload completo para o host manager
+payload_completo = json.dumps({"data": dados_zabbix})
+items.append(ItemValue('teste_sender_oci', 'oci_buckets.payload', payload_completo))
+ 
+# Adicionar itens individuais para cada bucket
+for item in dados_zabbix:
+    bucket_name = item["bucket_name"]
+    bucket_size = item["bucket_size"]
+    payload_json = json.dumps(item)
+    
+    print(f"Payload JSON: {payload_json}")
+    # Adicionar o item com o nome do bucket como host
+    items.append(ItemValue(bucket_name, 'oci_buckets.payload', payload_json))
+ 
+# Enviar os itens ao Zabbix
+sender = Sender('sa-sp1-be-pool-1.monitoracao.sasp1.oci.i.globo', 10003)
+response = sender.send(items)
+
+
+
+
+
+'''
 # Salvar em arquivo JSON para envio posterior
         
 payload_json = {"data": dados_zabbix}
@@ -137,6 +166,10 @@ items = [
 sender = Sender('sa-sp1-be-pool-1.monitoracao.sasp1.oci.i.globo', 10003)
 response = sender.send(items)
 
+'''
+print("Payload enviado ao Zabbix:")
+print(items)
+print("Resposta do Zabbix:")
 print(response)
-
 print(f"Payload gerado com {len(dados_zabbix)} entradas.")
+print("Coleta concluída.")
