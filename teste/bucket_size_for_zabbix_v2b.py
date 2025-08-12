@@ -132,7 +132,7 @@ items = []
  
 # Adicionar o payload completo para o host manager
 payload_completo = json.dumps({"data": dados_zabbix})
-items.append(ItemValue('teste_sender_oci', 'oci_buckets.payload', payload_completo))
+items.append(ItemValue('teste_sender_oci', 'oci_buckets_payload', payload_completo))
  
 # Adicionar itens individuais para cada bucket
 for item in dados_zabbix:
@@ -140,35 +140,13 @@ for item in dados_zabbix:
     bucket_size = item["bucket_size"]
     payload_json = json.dumps(item)
     
-    print(f"Payload JSON: {payload_json}")
     # Adicionar o item com o nome do bucket como host
-    items.append(ItemValue(bucket_name, 'oci_buckets.payload', payload_json))
+    items.append(ItemValue(bucket_name, 'oci_buckets_payload', payload_json))
  
 # Enviar os itens ao Zabbix
 sender = Sender('sa-sp1-be-pool-1.monitoracao.sasp1.oci.i.globo', 10003)
 response = sender.send(items)
 
-
-
-
-
-'''
-# Salvar em arquivo JSON para envio posterior
-        
-payload_json = {"data": dados_zabbix}
-
-print(json.dumps(payload_json, indent=2))
-
-items = [
-    ItemValue('teste_sender_oci', 'oci_buckets_payload', json.dumps(payload_json, indent=2))
-]
-
-sender = Sender('sa-sp1-be-pool-1.monitoracao.sasp1.oci.i.globo', 10003)
-response = sender.send(items)
-
-'''
-print("Payload enviado ao Zabbix:")
-print(items)
 print("Resposta do Zabbix:")
 print(response)
 print(f"Payload gerado com {len(dados_zabbix)} entradas.")
